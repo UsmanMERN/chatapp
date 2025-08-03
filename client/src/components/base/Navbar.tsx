@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { LoginModal } from "../auth/LoginModal";
-import { CustomUser } from "@/api/auth/[...nextauth]/options";
+import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 
 
 interface NavbarProps {

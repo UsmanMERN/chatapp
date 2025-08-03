@@ -7,9 +7,21 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { signIn } from "next-auth/react"
 import Image from "next/image"
 
 export function LoginModal() {
+    const handleLogin = async () => {
+        // Handle login logic here
+        signIn("google", {
+            callbackUrl: "/dashboard", // Redirect to dashboard after login
+            redirect: true, // Redirect after sign-in
+        }
+        )
+
+
+    }
+
     return (
         <Dialog>
             <form>
@@ -23,7 +35,7 @@ export function LoginModal() {
                             QuickChat makes it effortless to create secure chat links and start conversions in seconds.
                         </DialogDescription>
                     </DialogHeader>
-                    <Button variant={"outline"}>
+                    <Button variant={"outline"} onClick={handleLogin} >
                         <Image src={"/images/google.png"} className="mr-4" height={25} width={25} alt="Google Logo" /> Continue with Google
                     </Button>
                 </DialogContent>

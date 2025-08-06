@@ -10,7 +10,7 @@ export async function fetchChatGroup(token: string) {
             tags: ["dashboard"]
         }
     })
-
+    console.log('res :>> ', res);
     if (!res.ok) {
         throw new Error("Failed to fetch data")
     }
